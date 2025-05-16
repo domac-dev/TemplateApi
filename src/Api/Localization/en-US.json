@@ -1,0 +1,23 @@
+{
+  "USER_SUCCESS_LOGIN": "Login was successfull.",
+  "USER_SUCCESS_LOGOUT": "Logout was successfull.",
+  "ERROR_INVALID_CREDENTIALS": "Incorrect login information provided.",
+  "ERROR_INVALID_EMAIL": "Incorrect email address.",
+  "ERROR_INVALID_PASSWORD": "Incorrect password.",
+  "USER_DOESNT_EXIST": "User doesn't exist.'",
+  "ACCOUNT_DELETED": "Account is successfully deleted.'",
+  "UNATHORIZED": "You're not logged into system.",
+  "REFRESH_TOKEN_IS_NULL": "Not possible to refresh authentication token.",
+  "EMAIL_DOESNT_EXIST": "E-mail address doesn't exist in the system.",
+  "PASSWORD_RESET_SUCCESS": "Password reset was successfull. Please check your e-mail address.",
+  "LOGOUT_SUCCESS": "Succesfully logged out.",
+  "ERROR_CREATING_USER": "Error occured while trying to create an account. Please contact support.",
+  "INVALID_GOOGLE_TOKEN": "Google authentication key is invalid.",
+  "REGISTRATION_SUCCESS": "You have successfully registered your account. Please confirm your email address.",
+  "UPDATE_SUCCESS": "You have successfully updated your user information.",
+  "PASSWORD_UPDATE_SUCCESS": "You have successfully updated your password.",
+  "USER_EXISTING_EMAIL": "E-mail address alredy exists in the system.",
+  "REQUIRED_FIELD": "This is required field.",
+  "FORMAT_ERROR": "Invalid format.",
+  "USER_CREATED_SUCCESS": "User account created successfully."
+}

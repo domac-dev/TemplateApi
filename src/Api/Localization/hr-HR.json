@@ -1,0 +1,24 @@
+{
+  "USER_SUCCESS_LOGIN": "Uspješno ste se prijavili.",
+  "USER_SUCCESS_LOGOUT": "Uspješno ste se odjavili.",
+  "ERROR_INVALID_CREDENTIALS": "Neispravni podaci za prijavu.",
+  "ERROR_INVALID_EMAIL": "Neispravna e-mail adresa.",
+  "ERROR_INVALID_PASSWORD": "Nesipravna lozinka.",
+  "USER_DOESNT_EXIST": "Korisnik ne postoji u sustavu.",
+  "ACCOUNT_DELETED": "Korisnički račun je uspješno obrisan.",
+  "UNATHORIZED": "Niste prijavljeni u sustav.",
+  "REFRESH_TOKEN_IS_NULL": "Nije moguće osvježiti autorizacijski token.",
+  "EMAIL_DOESNT_EXIST": "E-mail adresa ne postoji u sustavu.",
+  "PASSWORD_RESET_SUCCESS": "Lozinka je uspješno obnovljena. Provjerite vašu elektronsku poštu.",
+  "LOGOUT_SUCCESS": "Uspješno ste odjavljeni.",
+  "ERROR_CREATING_USER": "Dogodila se pogreška prilikom stvaranja profila. Molimo obratite se korisničkoj podršci.",
+  "INVALID_GOOGLE_TOKEN": "Google autentikacijski ključ je neispravan.",
+  "REGISTRATION_SUCCESS": "Uspješno ste registrirali svoj korisnički račun. Molimo potvrdite svoju elektronsku poštu.",
+  "UPDATE_SUCCESS": "Uspješno ste uredili vaše korisničke informacije.",
+  "PASSWORD_UPDATE_SUCCESS": "Uspješno ste promijenili vašu lozinku.",
+  "USER_EXISTING_EMAIL": "Elektronska pošta već postoji u sustavu.",
+  "REQUIRED_FIELD": "Ovo je obavezno polje.",
+  "FORMAT_ERROR": "Neispravan format.",
+  "USER_CREATED_SUCCESS": "Uspješno ste kreirali korisnički račun."
+
+}
