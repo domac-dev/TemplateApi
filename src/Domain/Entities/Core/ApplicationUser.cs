@@ -1,7 +1,7 @@
 ﻿using Ardalis.GuardClauses;
-using System.Data;
 using Domain.Abstraction;
 using Domain.Enumerations;
+using System.Data;
 
 namespace Domain.Entities.Core
 {

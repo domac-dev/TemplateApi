@@ -1,5 +1,4 @@
 ﻿using Ardalis.Specification;
-using Domain.Entities.Core;
 using Domain.Enumerations;
 
 namespace Domain.Entities.Core.Specifications

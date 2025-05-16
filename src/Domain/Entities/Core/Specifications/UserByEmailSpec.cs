@@ -1,5 +1,4 @@
 ﻿using Ardalis.Specification;
-using Domain.Entities.Core;
 
 namespace Domain.Entities.Core.Specifications
 {

@@ -7,7 +7,7 @@ namespace Domain.Entities.Core
     public class Claim : AudiableEntity, IAggregateRoot
     {
         private readonly List<ApplicationUser> _users = [];
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Name { get; set; } = null!;
         public ClaimType Type { get; set; } = default!;
         protected Claim() { }
