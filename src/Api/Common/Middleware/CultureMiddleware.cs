@@ -1,5 +1,5 @@
-﻿using System.Globalization;
-using Domain.Abstraction;
+﻿using Domain.Abstraction;
+using System.Globalization;
 
 namespace Api.Common.Middleware
 {

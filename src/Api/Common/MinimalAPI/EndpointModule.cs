@@ -1,6 +1,5 @@
 ﻿using App.Localization.Abstraction;
 using App.Result;
-using MediatR;
 using System.Globalization;
 
 namespace Api.Common.MinimalAPI

@@ -6,7 +6,7 @@ namespace Domain.Entities.Core.Specifications
     {
         public UserByConfirmationTokenSpec(string confirmationToken)
         {
-            Query.Where(c=> c.EmailConfirmationToken == confirmationToken && !c.EmailConfirmed &&
+            Query.Where(c => c.EmailConfirmationToken == confirmationToken && !c.EmailConfirmed &&
                 (!c.ValidUntil.HasValue || c.ValidUntil.Value < DateTime.UtcNow));
         }
     }

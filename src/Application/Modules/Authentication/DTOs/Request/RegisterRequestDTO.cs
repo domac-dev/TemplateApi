@@ -1,6 +1,6 @@
-﻿using FluentValidation;
-using Domain;
+﻿using Domain;
 using Domain.Enumerations;
+using FluentValidation;
 
 namespace Application.Modules.Authentication.DTOs.Request
 {

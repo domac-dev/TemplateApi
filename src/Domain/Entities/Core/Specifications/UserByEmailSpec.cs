@@ -6,7 +6,7 @@ namespace Domain.Entities.Core.Specifications
     {
         public UserByEmailSpec(string email)
         {
-            Query.Where(c => c.Email == email && c.EmailConfirmed && 
+            Query.Where(c => c.Email == email && c.EmailConfirmed &&
                 (!c.ValidUntil.HasValue || c.ValidUntil.Value < DateTime.UtcNow));
         }
     }

@@ -1,10 +1,10 @@
-﻿using App.Localization.Abstraction;
-using MediatR;
+﻿using Api.Common.Attributes;
+using Api.Common.MinimalAPI;
+using App.Localization.Abstraction;
 using Application.Modules.Authentication.Commands;
 using Application.Modules.Authentication.DTOs.Request;
 using Domain.AccessControl;
-using Api.Common.Attributes;
-using Api.Common.MinimalAPI;
+using MediatR;
 
 namespace Api.Endpoints
 {

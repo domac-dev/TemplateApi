@@ -1,11 +1,11 @@
 ﻿using App.Result;
-using DomainEvent.Abstraction;
 using Application.Modules.Authentication.DTOs.Request;
 using Application.Modules.Authentication.DTOs.Response;
 using Domain.Abstraction;
 using Domain.Abstraction.Security;
 using Domain.Entities.Core;
 using Domain.Entities.Core.Specifications;
+using DomainEvent.Abstraction;
 
 namespace Application.Modules.Authentication.Commands
 {

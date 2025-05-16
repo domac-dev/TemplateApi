@@ -10,7 +10,7 @@ namespace Infrastructure.Configurations
         {
             builder.Property(x => x.CreatedBy)
                 .HasMaxLength(ModelConstants.GeneralModel.GUID)
-                .HasDefaultValue(SQLConstants.SYSTEM);
+                .HasDefaultValue(AppConstants.SYSTEM);
 
             builder.Property(x => x.CreatedOn)
                 .HasDefaultValueSql(SQLConstants.GETDATE);

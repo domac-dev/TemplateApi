@@ -38,7 +38,7 @@ namespace Infrastructure
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
-            string userIdentifier = SQLConstants.SYSTEM;
+            string userIdentifier = AppConstants.SYSTEM;
             bool isAuthenticated = _httpContextAccessor?.HttpContext?.User?.Identity?.IsAuthenticated ?? false;
 
             if (isAuthenticated)

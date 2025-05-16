@@ -1,8 +1,20 @@
-﻿using App.Localization;
+﻿using Api.Common;
+using Api.Common.Middleware;
+using Api.Common.MinimalAPI;
+using App.Localization;
+using Application.Modules.Authentication.Commands;
+using Application.Modules.Authentication.DTOs.Request;
+using Domain;
+using Domain.Abstraction;
+using Domain.Abstraction.Security;
+using Domain.Enumerations;
 using DomainEvent;
 using DomainEvent.Abstraction;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Infrastructure;
+using Infrastructure.Security;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,18 +24,6 @@ using Microsoft.OpenApi.Models;
 using System.Globalization;
 using System.Reflection;
 using System.Text.Json;
-using Application.Modules.Authentication.Commands;
-using Application.Modules.Authentication.DTOs.Request;
-using Domain;
-using Domain.Abstraction;
-using Domain.Abstraction.Security;
-using Domain.Enumerations;
-using Infrastructure;
-using Infrastructure.Security;
-using Infrastructure.Services;
-using Api.Common;
-using Api.Common.Middleware;
-using Api.Common.MinimalAPI;
 
 namespace Api
 {
@@ -37,7 +37,7 @@ namespace Api
             builder.Services.AddSingleton(appSettings);
 
             //builder.Services.Configure<AppSettings>(builder.Configuration);
-            builder.Services.AddSingleton<IDomainEventDispatcher, MediatREventDispatcher>();         
+            builder.Services.AddSingleton<IDomainEventDispatcher, MediatREventDispatcher>();
             builder.Services.AddDbContext<Database>((serviceProvider, options) =>
             {
                 var connectionString = builder.Configuration.GetConnectionString("DatabaseKey");
@@ -121,7 +121,7 @@ namespace Api
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("Development", builder =>
+                options.AddPolicy(EnvironmentConstants.DEVELOPMENT, builder =>
                 {
                     builder.SetIsOriginAllowed(_ => true)
                         .AllowAnyHeader()
@@ -151,7 +151,7 @@ namespace Api
 
             if (app.Environment.IsDevelopment())
             {
-                app.UseCors("Development");
+                app.UseCors(EnvironmentConstants.DEVELOPMENT);
                 app.UseSwagger();
                 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1"); });
             }
@@ -160,9 +160,9 @@ namespace Api
 
             app.UseExceptionHandler(exceptionHandlerApp => exceptionHandlerApp.Run(async context =>
             {
-                 var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
-                 var logger = context.RequestServices.GetService<ILogger<Program>>() ?? throw new Exception("Logger is null.");
-                 await ExceptionHandler.HandleExceptionAsync(context, exception, logger);
+                var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+                var logger = context.RequestServices.GetService<ILogger<Program>>() ?? throw new Exception("Logger is null.");
+                await ExceptionHandler.HandleExceptionAsync(context, exception, logger);
             }));
         }
     }

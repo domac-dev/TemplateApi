@@ -20,7 +20,8 @@ namespace Domain.Entities.Core
         public RefreshToken(string token, DateTime expiresAt, string? createdByIp = null)
         {
             Token = Guard.Against.MinMaxLength(token, 12, ModelConstants.TokenModel.VALUE);
-            CreatedByIp = Guard.Against.IPNullable(createdByIp) ?? "UNKNOWN";
+            CreatedByIp = !string.IsNullOrEmpty(createdByIp) && createdByIp != AppConstants.UNKWOWN
+                ? Guard.Against.IP(createdByIp) : AppConstants.UNKWOWN;
             ExpiresAt = Guard.Against.NullOrOutOfSQLDateRange(expiresAt);
         }
 

@@ -1,10 +1,10 @@
 ﻿using App.Result;
-using DomainEvent.Abstraction;
 using Application.Modules.Authentication.DTOs.Request;
 using Domain.Abstraction;
 using Domain.Entities.Core;
 using Domain.Entities.Core.Specifications;
 using Domain.Enumerations;
+using DomainEvent.Abstraction;
 
 namespace Application.Modules.Authentication.Commands
 {

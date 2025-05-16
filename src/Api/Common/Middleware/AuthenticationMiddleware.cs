@@ -1,6 +1,6 @@
-﻿using System.Security.Claims;
-using Domain.Abstraction;
+﻿using Domain.Abstraction;
 using Domain.Abstraction.Security;
+using System.Security.Claims;
 
 namespace Api.Common.Middleware
 {
