@@ -8,9 +8,8 @@ var app = builder.Build();
 app.BuildApp();
 app.UseHttpsRedirection();
 
-//app.UseDefaultFiles();
-//app.MapStaticAssets();
-//app.MapFallbackToFile("/index.html");
+/*Uncomment this line if you want to automatically create and seed database*/
+//SeedDb(app);
 
 app.Run();
 
