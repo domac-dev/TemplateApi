@@ -1,4 +1,5 @@
-﻿using Application.Modules.Authentication.DTOs.Request;
+﻿using Api;
+using Application.Modules.Authentication.DTOs.Request;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace FunctionalTests.Authentication
     public class SignInEndpointTest(CustomWebAppFactory<Program> factory) : IClassFixture<CustomWebAppFactory<Program>>
     {
         private readonly HttpClient _client = factory.CreateClient();
-        private const string _uri = "api/auth";
+        private const string _uri = Routes.AUTH;
 
         [Fact]
         public async Task TestSignInEndpoint()
