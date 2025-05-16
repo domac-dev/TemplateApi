@@ -19,5 +19,7 @@
   "USER_EXISTING_EMAIL": "E-mail address alredy exists in the system.",
   "REQUIRED_FIELD": "This is required field.",
   "FORMAT_ERROR": "Invalid format.",
-  "USER_CREATED_SUCCESS": "User account created successfully."
+  "USER_CREATED_SUCCESS": "User account created successfully.",
+  "ERROR_EMAIL_NOT_CONFIRMED": "E-mail address is not confirmed.",
+  "ERROR_CONFIRMATION_TOKEN": "E-mail confirmation token is incorrect."
 }

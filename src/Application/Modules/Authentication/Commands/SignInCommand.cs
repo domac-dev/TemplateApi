@@ -16,10 +16,13 @@ namespace Application.Modules.Authentication.Commands
     {
         public async Task<Result<SignInResponseDTO>> Handle(SignInCommand request, CancellationToken cancellationToken)
         {
-            ApplicationUser? user = await repository.FirstOrDefaultAsync(new UserByEmailSpec(request.Data.EmailAddress), cancellationToken);
+            ApplicationUser? user = await repository.FirstOrDefaultAsync(new UserByEmailUnconfirmedSpec(request.Data.EmailAddress), cancellationToken);
 
             if (user is null)
                 return Result.BadRequest("ERROR_INVALID_EMAIL");
+
+            else if (!user.EmailConfirmed)
+                return Result.BadRequest("ERROR_EMAIL_NOT_CONFIRMED");
 
             if (!BCrypt.Net.BCrypt.Verify(request.Data.Password, user.PasswordHash))
                 return Result.BadRequest("ERROR_INVALID_PASSWORD");

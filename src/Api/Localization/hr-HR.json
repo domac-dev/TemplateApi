@@ -19,6 +19,7 @@
   "USER_EXISTING_EMAIL": "Elektronska pošta već postoji u sustavu.",
   "REQUIRED_FIELD": "Ovo je obavezno polje.",
   "FORMAT_ERROR": "Neispravan format.",
-  "USER_CREATED_SUCCESS": "Uspješno ste kreirali korisnički račun."
-
+  "USER_CREATED_SUCCESS": "Uspješno ste kreirali korisnički račun.",
+  "ERROR_EMAIL_NOT_CONFIRMED": "Elektronska pošta nije potvrđena.",
+  "ERROR_CONFIRMATION_TOKEN": "Ključ za potvrdu elektronske pošte je neispravan."
 }

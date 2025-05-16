@@ -20,6 +20,7 @@ namespace Api.Common.MinimalAPI
 
             return result.StatusCode switch
             {
+                ResultStatus.NoContent => Results.NoContent(),
                 ResultStatus.Unauthorized => Results.Unauthorized(),
                 ResultStatus.InternalError => Results.Problem(result.Message),
                 ResultStatus.Forbidden => Results.Forbid(),
