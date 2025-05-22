@@ -46,6 +46,7 @@ namespace Api
             builder.Services.AddScoped<DbContext>(sp => sp.GetRequiredService<Database>());
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             builder.Services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
