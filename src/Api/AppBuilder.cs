@@ -31,16 +31,14 @@ namespace Api
     {
         internal static void BuildProject(this WebApplicationBuilder builder)
         {
-            AppSettings appSettings = builder.Configuration.GetSection("AppSettings").Get<AppSettings>()
+            AppSettings appSettings = builder.Configuration.GetSection(nameof(AppSettings)).Get<AppSettings>()
                 ?? throw new Exception(nameof(AuthenticationConfig));
 
             builder.Services.AddSingleton(appSettings);
-
-            //builder.Services.Configure<AppSettings>(builder.Configuration);
             builder.Services.AddSingleton<IDomainEventDispatcher, MediatREventDispatcher>();
             builder.Services.AddDbContext<Database>((serviceProvider, options) =>
             {
-                var connectionString = builder.Configuration.GetConnectionString("DatabaseKey");
+                var connectionString = builder.Configuration.GetConnectionString(nameof(Database));
                 options.UseSqlServer(connectionString).ConfigureWarnings(warnings =>
                 warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
             });
