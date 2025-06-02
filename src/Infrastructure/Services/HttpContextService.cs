@@ -1,5 +1,5 @@
-﻿using Domain.Abstraction;
-using Domain.Enumerations;
+﻿using Domain;
+using Domain.Abstraction;
 using Microsoft.AspNetCore.Http;
 
 namespace Infrastructure.Services
@@ -20,7 +20,7 @@ namespace Infrastructure.Services
         public string Culture()
         {
             if (!_httpContextAccessor.HttpContext.Request.Headers.TryGetValue(CULTURE, out var culture))
-                return CultureExtensions.AsString(CultureType.Croatian);
+                return CultureConstants.CROATIAN;
 
             return culture.ToString();
         }

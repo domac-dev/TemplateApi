@@ -1,6 +1,6 @@
 ﻿namespace Domain.Abstraction
 {
-    public interface IRepository<T>: IReadRepository<T> where T : IAggregateRoot
+    public interface IRepository<T> : IReadRepository<T> where T : IAggregateRoot
     {
         Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
         void Add(T entity);

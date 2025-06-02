@@ -1,21 +1,22 @@
 ﻿using Domain;
-using Domain.Entities.Core;
-using Infrastructure.Configurations;
+using Domain.Entities.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Persistence.Configurations
+namespace Infrastructure.Configurations.Security
 {
     public class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
     {
         public void Configure(EntityTypeBuilder<RefreshToken> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasIndex(x => x.Id);
 
             builder.Property(x => x.Token)
                  .HasMaxLength(ModelConstants.TokenModel.VALUE)
                  .IsRequired();
+
+            builder.HasIndex(x => x.Token)
+                .IsUnique();
 
             builder.Property(x => x.ExpiresAt)
                 .IsRequired();
@@ -34,7 +35,7 @@ namespace Persistence.Configurations
             builder.Property(x => x.ReasonRevoked)
                 .HasMaxLength(ModelConstants.TokenModel.REVOKE_REASON);
 
-            builder.HasOne(x => x.ApplicationUser)
+            builder.HasOne(x => x.User)
                 .WithMany(x => x.RefreshTokens)
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
@@ -42,7 +43,7 @@ namespace Persistence.Configurations
 
             builder.MapBaseEntity();
 
-            builder.ToTable(nameof(RefreshToken));
+            builder.ToTable(nameof(RefreshToken), Schemas.SECURITY);
         }
     }
 }

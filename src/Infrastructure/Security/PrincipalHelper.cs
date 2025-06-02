@@ -1,5 +1,4 @@
 ﻿using Domain.Abstraction;
-using Domain.Enumerations;
 using Domain.Exceptions;
 using Infrastructure.Security.Models;
 using System.Security.Claims;
@@ -32,15 +31,14 @@ namespace Infrastructure.Security
 
             IEnumerable<Claim> claims = principal.Claims;
 
-            long identifier = long.Parse((claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier) ?? throw new NotAuthorizedException()).Value);
+            int identifier = int.Parse((claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier) ?? throw new NotAuthorizedException()).Value);
 
             string email = (claims.FirstOrDefault(c => c.Type == ClaimTypes.Email) ?? throw new NotAuthorizedException()).Value;
 
             string rolesString = string.Join(",", claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value));
             string claimsString = string.Join(",", claims.Where(c => c.Type == CUSTOM_CLAIM).Select(c => c.Value));
 
-            CultureType culture = Enum.TryParse<CultureType>(claims.FirstOrDefault(c => c.Type == ClaimTypes.Locality)?.Value, out var parsedCulture)
-                ? parsedCulture : CultureType.Croatian;
+            string culture = claims.FirstOrDefault(c => c.Type == ClaimTypes.Locality)?.Value ?? throw new NotAuthorizedException();
 
             return new UserCredentials(identifier, email, rolesString, claimsString, culture);
         }

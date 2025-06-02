@@ -1,10 +1,12 @@
-﻿namespace Domain.Entities.Core
+﻿using Domain.Entities.Core;
+
+namespace Domain.Entities.Security
 {
     public class UserClaim : AudiableEntity
     {
-        public long UserId { get; set; }
+        public int UserId { get; set; }
         public int ClaimId { get; set; }
-        public ApplicationUser User { get; set; } = null!;
+        public User User { get; set; } = null!;
         public Claim Claim { get; set; } = null!;
         public UserClaim() { }
     }

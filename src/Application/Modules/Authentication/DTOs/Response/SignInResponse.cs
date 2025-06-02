@@ -2,9 +2,9 @@
 {
     public class SignInResponseDTO
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string FullName { get; set; } = null!;
-        public string? Username { get; set; }
+        public string Telephone { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Culture { get; set; } = null!;
         public IList<string> Claims { get; set; } = null!;

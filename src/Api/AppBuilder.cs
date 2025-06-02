@@ -7,7 +7,6 @@ using Application.Modules.Authentication.DTOs.Request;
 using Domain;
 using Domain.Abstraction;
 using Domain.Abstraction.Security;
-using Domain.Enumerations;
 using DomainEvent;
 using DomainEvent.Abstraction;
 using FluentValidation;
@@ -64,8 +63,8 @@ namespace Api
             builder.Services.AddScoped<IUserManager, UserManager>();
 
 
-            string croatianCulture = CultureExtensions.AsString(CultureType.Croatian);
-            string englishCulture = CultureExtensions.AsString(CultureType.English);
+            string croatianCulture = CultureConstants.CROATIAN;
+            string englishCulture = CultureConstants.ENGLISH;
 
             builder.Services.AddLocalizator(options =>
             {

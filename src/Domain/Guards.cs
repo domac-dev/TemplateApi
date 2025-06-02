@@ -73,8 +73,6 @@ namespace Domain
         }
     }
 
-
-
     public static class StringGuard
     {
         public static string MinMaxLength(this IGuardClause guardClause, string input, int minLength, int maxLength,

@@ -1,7 +1,9 @@
 ﻿using Domain;
 using Domain.Abstraction;
 using Domain.Entities.Core;
+using Domain.Entities.Security;
 using Infrastructure.Security;
+using Infrastructure.Seed;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,12 +15,13 @@ namespace Infrastructure
         private readonly IConfiguration _configuration = configuration;
         private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
         public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
         public DbSet<Role> Roles { get; set; } = null!;
         public DbSet<UserRole> UserRoles { get; set; } = null!;
         public DbSet<Claim> Claims { get; set; } = null!;
         public DbSet<UserClaim> UserClaims { get; set; } = null!;
+        public DbSet<CultureType> Cultures { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

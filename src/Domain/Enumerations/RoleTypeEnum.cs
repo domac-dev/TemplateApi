@@ -1,6 +1,6 @@
 ﻿namespace Domain.Enumerations
 {
-    public enum RoleType
+    public enum RoleTypeEnum
     {
         Administrator = 1,
         Business,

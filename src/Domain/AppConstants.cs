@@ -13,4 +13,10 @@
         public const string DEVELOPMENT = "Development";
         public const string TEST = "Test";
     }
+
+    public static class CultureConstants
+    {
+        public const string CROATIAN = "hr-HR";
+        public const string ENGLISH = "en-US";
+    }
 }

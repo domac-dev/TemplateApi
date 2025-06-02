@@ -1,21 +1,24 @@
 ﻿using Ardalis.GuardClauses;
 using Domain.Abstraction;
+using Domain.Entities.Core;
 using Domain.Enumerations;
 
-namespace Domain.Entities.Core
+namespace Domain.Entities.Security
 {
     public class Role : AudiableEntity, IAggregateRoot
     {
-        private readonly List<ApplicationUser> _users = [];
         protected Role() { }
-        public Role(RoleType roleType)
+        public Role(RoleTypeEnum roleType)
         {
             Type = Guard.Against.EnumOutOfRange(roleType);
             Name = Enum.GetName(roleType)!;
         }
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public RoleType Type { get; set; } = default!;
-        public IReadOnlyCollection<ApplicationUser> Users => _users;
+        public RoleTypeEnum Type { get; set; } = default!;
+
+
+        private readonly List<User> _users = [];
+        public IReadOnlyCollection<User> Users => _users;
     }
 }

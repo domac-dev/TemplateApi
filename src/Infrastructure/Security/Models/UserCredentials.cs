@@ -1,5 +1,5 @@
-﻿using Domain.Abstraction;
-using Domain.Enumerations;
+﻿using Domain;
+using Domain.Abstraction;
 using Newtonsoft.Json;
 
 namespace Infrastructure.Security.Models
@@ -7,7 +7,7 @@ namespace Infrastructure.Security.Models
     public class UserCredentials : IUserCredentials
     {
         public UserCredentials() { }
-        public UserCredentials(long id, string email, string roles, string claims, CultureType cultureType)
+        public UserCredentials(int id, string email, string roles, string claims, string cultureType)
         {
             Id = id;
             Email = email;
@@ -16,11 +16,11 @@ namespace Infrastructure.Security.Models
             Culture = cultureType;
         }
 
-        public long Id { get; private set; }
+        public int Id { get; private set; }
         public string Email { get; private set; } = string.Empty;
         public string RolesAsString { get; private set; } = string.Empty;
         public string ClaimsAsString { get; private set; } = string.Empty;
-        public CultureType Culture { get; private set; } = CultureType.Croatian;
+        public string Culture { get; private set; } = CultureConstants.CROATIAN;
 
         public static UserCredentials FromUser(IUserCredentials user)
         {

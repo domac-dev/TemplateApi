@@ -1,14 +1,15 @@
 ﻿using Ardalis.GuardClauses;
+using Domain.Entities.Core;
 using Domain.Enumerations;
 
-namespace Domain.Entities.Core
+namespace Domain.Entities.Security
 {
     public class RefreshToken : AudiableEntity
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Token { get; private set; } = null!;
-        public long UserId { get; private set; }
-        public ApplicationUser ApplicationUser { get; private set; } = null!;
+        public int UserId { get; private set; }
+        public User User { get; private set; } = null!;
         public DateTime ExpiresAt { get; private set; }
         public string? ReplacedByToken { get; private set; }
         public string CreatedByIp { get; private set; } = null!;
@@ -27,7 +28,7 @@ namespace Domain.Entities.Core
 
         public void ReplaceToken(string refreshToken)
         {
-            Revoke(TokenRevokeType.Replaced.ToString());
+            Revoke(TokenRevokeTypeEnum.Replaced.ToString());
             ReplacedByToken = refreshToken;
         }
 

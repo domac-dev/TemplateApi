@@ -1,6 +1,6 @@
 ﻿namespace Domain.Enumerations
 {
-    public enum ClaimType
+    public enum ClaimTypeEnum
     {
         FullAccess = 1,
         ManageUsers

@@ -1,13 +1,11 @@
-﻿using Domain.Enumerations;
-
-namespace Domain.Abstraction
+﻿namespace Domain.Abstraction
 {
     public interface IUserCredentials
     {
-        public long Id { get; }
+        public int Id { get; }
         public string Email { get; }
         public string RolesAsString { get; }
         public string ClaimsAsString { get; }
-        public CultureType Culture { get; }
+        public string Culture { get; }
     }
 }

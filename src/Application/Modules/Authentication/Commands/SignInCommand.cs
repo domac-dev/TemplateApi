@@ -1,22 +1,30 @@
 ﻿using App.Result;
 using Application.Modules.Authentication.DTOs.Request;
 using Application.Modules.Authentication.DTOs.Response;
+using Ardalis.Specification;
 using Domain.Abstraction;
 using Domain.Abstraction.Security;
 using Domain.Entities.Core;
-using Domain.Entities.Core.Specifications;
 using DomainEvent.Abstraction;
 
 namespace Application.Modules.Authentication.Commands
 {
     public record SignInCommand(SignInRequestDTO Data) : ICommand<Result<SignInResponseDTO>>;
 
-    internal class SignInHandler(IRepository<ApplicationUser> repository, IHttpContextService httpContextHelper, IAuthenticationManager authenticationManager)
+    internal class SignInHandler(IRepository<User> repository, IHttpContextService httpContextHelper, IAuthenticationManager authenticationManager)
       : ICommandHandler<SignInCommand, Result<SignInResponseDTO>>
     {
         public async Task<Result<SignInResponseDTO>> Handle(SignInCommand request, CancellationToken cancellationToken)
         {
-            ApplicationUser? user = await repository.FirstOrDefaultAsync(new UserByEmailUnconfirmedSpec(request.Data.EmailAddress), cancellationToken);
+            ISpecificationBuilder<User> query = new Specification<User>().Query
+              .Include(x => x.CultureType)
+              .Include(x => x.Roles)
+              .Include(x => x.Claims)
+              .Include(x => x.RefreshTokens)
+              .Where(ExpressionHelper.Valid<User>())
+              .Where(c => c.Email == request.Data.EmailAddress);
+
+            User? user = await repository.FirstOrDefaultAsync(query.Specification, cancellationToken);
 
             if (user is null)
                 return Result.BadRequest("ERROR_INVALID_EMAIL");
@@ -24,16 +32,16 @@ namespace Application.Modules.Authentication.Commands
             else if (!user.EmailConfirmed)
                 return Result.BadRequest("ERROR_EMAIL_NOT_CONFIRMED");
 
-            if (!BCrypt.Net.BCrypt.Verify(request.Data.Password, user.PasswordHash))
+            else if (!BCrypt.Net.BCrypt.Verify(request.Data.Password, user.PasswordHash))
                 return Result.BadRequest("ERROR_INVALID_PASSWORD");
 
-            (IToken AccessToken, IToken RefreshToken) tokens = authenticationManager.GenerateTokens(user);
+            (IToken AccessToken, IToken RefreshToken) = authenticationManager.GenerateTokens(user);
 
-            authenticationManager.SetRefreshToken(tokens.RefreshToken);
+            authenticationManager.SetRefreshToken(RefreshToken);
 
-            user.AddRefreshTokenAndRevokeLast(tokens.RefreshToken.Value, tokens.RefreshToken.ExpiresAt, httpContextHelper.IPAddress());
+            user.AddRefreshTokenAndRevokeLast(RefreshToken.Value, RefreshToken.ExpiresAt, httpContextHelper.IPAddress());
 
-            SignInResponseDTO response = user.LoginResponse(tokens.AccessToken, tokens.RefreshToken);
+            SignInResponseDTO response = user.LoginResponse(AccessToken, RefreshToken);
 
             repository.Update(user);
             await repository.SaveChangesAsync(cancellationToken);

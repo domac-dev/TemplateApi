@@ -61,7 +61,7 @@ namespace Infrastructure.Security
             }
         }
 
-        public void SignOut(string token, long userId)
+        public void SignOut(string token, int userId)
         {
             _blacklistedTokens.AddOrUpdate(token, userId.ToString(), TimeSpan.FromMinutes(_authenticationConfig.AccessTokenExpiration));
         }

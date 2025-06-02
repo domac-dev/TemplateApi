@@ -1,6 +1,6 @@
 ﻿namespace Domain.Enumerations
 {
-    public enum TokenRevokeType
+    public enum TokenRevokeTypeEnum
     {
         Expired = 1,
         SignedOut,

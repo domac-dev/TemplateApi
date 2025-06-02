@@ -1,5 +1,6 @@
 using Api;
 using Infrastructure;
+using Infrastructure.Seed;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.BuildProject();

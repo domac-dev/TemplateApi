@@ -2,6 +2,19 @@
 {
     public static class ModelConstants
     {
+        public static class CultureModel
+        {
+            public const int VALUE = 10;
+        }
+
+        public static class AddressModel
+        {
+            public const int STREET = 100;
+            public const int COUNTRY = 50;
+            public const int CITY = 50;
+            public const int POSTAL_CODE = 5;
+        }
+
         public static class UserModel
         {
             public const int USERNAME = 25;
@@ -29,6 +42,8 @@
         {
             public const int GUID = 36;
             public const int MAX = 255;
+            public const int NAME = 50;
+            public const int TELEPHONE = 15;
         }
     }
 }
