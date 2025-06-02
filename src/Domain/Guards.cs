@@ -5,6 +5,37 @@ using System.Text.RegularExpressions;
 
 namespace Domain
 {
+    public static class TelephoneGuard
+    {
+        public static string Telephone(this IGuardClause guardClause, string input,
+            [CallerArgumentExpression(nameof(input))] string? parameterName = null)
+        {
+            Guard.Against.NullOrWhiteSpace(input, parameterName);
+            string pattern = @"^\+?[0-9\s\-]{7,15}$";
+
+            if (!Regex.IsMatch(input, pattern))
+                throw new ArgumentException("Invalid telephone format.", parameterName);
+
+            return input;
+        }
+
+        public static string? TelephoneNullable(this IGuardClause guardClause, string? input,
+            [CallerArgumentExpression(nameof(input))] string? parameterName = null)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return null;
+
+            string pattern = @"^\+?[0-9\s\-]{7,15}$";
+
+            if (!Regex.IsMatch(input, pattern))
+                throw new ArgumentException("Invalid telephone format.", parameterName);
+
+            return input;
+        }
+    }
+
+
+
     public static class StringGuard
     {
         public static string MinMaxLength(this IGuardClause guardClause, string input, int minLength, int maxLength,
