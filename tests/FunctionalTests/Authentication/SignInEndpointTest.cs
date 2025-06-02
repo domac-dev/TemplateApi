@@ -14,12 +14,7 @@ namespace FunctionalTests.Authentication
         [Fact]
         public async Task TestSignInEndpoint()
         {
-            var request = new SignInRequestDTO()
-            {
-                EmailAddress = "admin@email.hr",
-                Password = "admin",
-                RememberMe = true
-            };
+            var request = new SignInRequestDTO("admin@email.hr", "admin", true);
 
             var content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
             var response = await _client.PostAsync(_uri, content);

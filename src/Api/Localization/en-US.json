@@ -21,5 +21,7 @@
   "FORMAT_ERROR": "Invalid format.",
   "USER_CREATED_SUCCESS": "User account created successfully.",
   "ERROR_EMAIL_NOT_CONFIRMED": "E-mail address is not confirmed.",
-  "ERROR_CONFIRMATION_TOKEN": "E-mail confirmation token is incorrect."
+  "ERROR_CONFIRMATION_TOKEN": "E-mail confirmation token is incorrect.",
+  "CULTURE_DOES_NOT_EXIST": "Culture does not exist.",
+  "ROLE_DOES_NOT_EXIST": "Role does not exist."
 }

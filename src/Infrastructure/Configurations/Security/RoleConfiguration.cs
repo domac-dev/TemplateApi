@@ -22,6 +22,15 @@ namespace Infrastructure.Configurations.Security
                 .WithMany(ur => ur.Roles)
                 .UsingEntity<UserRole>(j => j.ToTable(nameof(UserRole), Schemas.SECURITY));
 
+            builder.Ignore(x => x.Content);
+            builder.HasMany(ct => ct.Translations)
+                .WithOne()
+                .HasForeignKey(ctt => ctt.RoleId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Navigation(ct => ct.Translations)
+             .AutoInclude();
+
             builder.MapBaseEntity();
 
             builder.ToTable(nameof(Role), Schemas.SECURITY);

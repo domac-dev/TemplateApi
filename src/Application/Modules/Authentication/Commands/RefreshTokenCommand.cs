@@ -28,11 +28,11 @@ namespace Application.Modules.Authentication.Commands
             if (user is null)
                 return Result.Unauthorized("UNATHORIZED");
 
-            (IToken AccessToken, IToken RefreshToken) tokens = authenticationManager.GenerateTokens(user);
+            (IToken AccessToken, IToken RefreshToken) = authenticationManager.GenerateTokens(user);
 
-            user.AddRefreshTokenAndReplace(tokens.RefreshToken.Value, tokens.RefreshToken.ExpiresAt, httpContextHelper.IPAddress());
+            user.AddRefreshTokenAndReplace(RefreshToken.Value, RefreshToken.ExpiresAt, httpContextHelper.IPAddress());
 
-            RefreshTokenResponseDTO response = AuthenticationMapper.RefreshTokenResponse(tokens.RefreshToken, tokens.AccessToken);
+            RefreshTokenResponseDTO response = AuthenticationMapper.RefreshTokenResponse(RefreshToken, AccessToken);
 
             repository.Update(user);
             await repository.SaveChangesAsync(cancellationToken);

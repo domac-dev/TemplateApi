@@ -1,20 +1,18 @@
 ﻿using Domain;
 using FluentValidation;
 
-namespace Application.Modules.Authentication.DTOs.Request
+namespace Application.Modules.Authentication.DTOs.Request;
+
+public record ResetPasswordRequestDTO(string EmailAddress)
 {
-    public class ResetPasswordRequestDTO
+    public class Validator : AbstractValidator<ResetPasswordRequestDTO>
     {
-        public string EmailAddress { get; set; } = null!;
-        public class Validator : AbstractValidator<SignInRequestDTO>
+        public Validator()
         {
-            public Validator()
-            {
-                RuleFor(x => x.EmailAddress)
-                     .NotEmpty().WithMessage("REQUIRED_FIELD")
-                     .MaximumLength(ModelConstants.GeneralModel.MAX)
-                     .EmailAddress().WithMessage("FORMAT_ERROR");
-            }
+            RuleFor(x => x.EmailAddress)
+                .NotEmpty().WithMessage("REQUIRED_FIELD")
+                .MaximumLength(ModelConstants.GeneralModel.MAX)
+                .EmailAddress().WithMessage("FORMAT_ERROR");
         }
     }
 }

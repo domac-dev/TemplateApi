@@ -69,7 +69,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Type = 1,
                             Value = "hr-HR"
                         },
@@ -77,7 +77,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Type = 2,
                             Value = "en-US"
                         });
@@ -161,33 +161,33 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             CultureTypeId = 1,
                             Email = "admin@email.hr",
                             FullName = "Administrator User",
-                            PasswordHash = "$2a$11$JirWzDstghZJWJ6teyzeIuSQxz2ZIq9Xt67PDrYoGv8MinnPtXRMm",
+                            PasswordHash = "$2a$11$ss/EKhbB/Sb0F6adJotyZ.Ngna/8myEOIeO6U3xeM3xeZbl4loAW.",
                             Telephone = "+385955535353"
                         },
                         new
                         {
                             Id = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             CultureTypeId = 2,
                             Email = "client@email.hr",
                             FullName = "Client User",
-                            PasswordHash = "$2a$11$wQOVMi39iC5ILUYSPFh69u431XPMaL9KJFDXX1OaBTRCEjhB6rmES",
+                            PasswordHash = "$2a$11$bu35699st1JFhR7YUrrgS.q4I5MUTih16XVlhzpodGfD12TKf2VUq",
                             Telephone = "+385955585353"
                         },
                         new
                         {
                             Id = 3,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             CultureTypeId = 2,
                             Email = "bussiness@email.hr",
                             FullName = "Business user",
-                            PasswordHash = "$2a$11$5FCSOG1dbgAenQDR4janPeHYweha9wxXnT55EuzUTS45z77viF9eS",
+                            PasswordHash = "$2a$11$3Bd1YIlXpaBxhfIOKS57rugf.3hCrroWMMc3Fe1PStfbCS1o.URzC",
                             Telephone = "+385956685353"
                         });
                 });
@@ -242,7 +242,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Name = "FullAccess",
                             Type = 1
                         },
@@ -250,7 +250,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Name = "ManageUsers",
                             Type = 2
                         });
@@ -377,7 +377,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Name = "Administrator",
                             Type = 1
                         },
@@ -385,7 +385,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Name = "Business",
                             Type = 2
                         },
@@ -393,7 +393,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 3,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643),
                             Name = "Client",
                             Type = 3
                         });
@@ -435,7 +435,7 @@ namespace Infrastructure.Migrations
                             ClaimId = 2,
                             UserId = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         });
                 });
 
@@ -475,35 +475,35 @@ namespace Infrastructure.Migrations
                             RoleId = 1,
                             UserId = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         },
                         new
                         {
                             RoleId = 2,
                             UserId = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         },
                         new
                         {
                             RoleId = 3,
                             UserId = 1,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         },
                         new
                         {
                             RoleId = 2,
                             UserId = 3,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         },
                         new
                         {
                             RoleId = 3,
                             UserId = 2,
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 953, DateTimeKind.Utc).AddTicks(14)
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 275, DateTimeKind.Utc).AddTicks(5643)
                         });
                 });
 
@@ -542,43 +542,45 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClaimId");
+
                     b.ToTable("ClaimTranslation", "Translation");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("204b62a4-80cc-4cec-9431-ce18adddbc3b"),
+                            Id = new Guid("b6c60634-d99d-4712-af4a-43d8cd4018e6"),
                             ClaimId = 1,
                             Content = "Puno pravo",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR"
                         },
                         new
                         {
-                            Id = new Guid("c2961012-5ecf-44e1-a87e-da1e716034fb"),
+                            Id = new Guid("96cb1977-adae-461e-8a77-f33abc1a0cfc"),
                             ClaimId = 1,
                             Content = "Full access",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US"
                         },
                         new
                         {
-                            Id = new Guid("7c867940-8cfc-4a07-a1d5-bf910a88d559"),
+                            Id = new Guid("be76947b-cbd2-4de6-b4a1-0f2fa5e42434"),
                             ClaimId = 2,
                             Content = "Upravljanje korisnicima",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR"
                         },
                         new
                         {
-                            Id = new Guid("a176ee71-ea72-4d15-bec2-3416091abc76"),
+                            Id = new Guid("62eca795-8510-46fc-b578-9505cc624d7a"),
                             ClaimId = 2,
                             Content = "Managing users",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US"
                         });
                 });
@@ -625,19 +627,19 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ca109a4f-78de-4684-8b08-89c8f7a7a306"),
+                            Id = new Guid("9d4933c0-f86a-4cf5-9e05-01c7422545d0"),
                             Content = "Hrvatski",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR",
                             CultureTypeId = 1
                         },
                         new
                         {
-                            Id = new Guid("8567bd6c-bdc6-4c14-9bc3-d9c2a26de6f2"),
+                            Id = new Guid("f212e54b-9290-445f-821d-de477d419963"),
                             Content = "English",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US",
                             CultureTypeId = 2
                         });
@@ -678,60 +680,62 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RoleId");
+
                     b.ToTable("RoleTranslation", "Translation");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("90d85150-c088-4ec0-9488-40b1bf2f9874"),
+                            Id = new Guid("2d28eea5-d192-4fa1-a8ef-f41d69217fe0"),
                             Content = "Administrator",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR",
                             RoleId = 1
                         },
                         new
                         {
-                            Id = new Guid("b29728c4-55c5-4b2f-9e5a-1a1bc37bf337"),
+                            Id = new Guid("dde0d4ba-f47f-4782-af24-5ba2d55d8420"),
                             Content = "Administrator",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US",
                             RoleId = 1
                         },
                         new
                         {
-                            Id = new Guid("0e6894fe-26e4-4f82-9d19-6338f03f122f"),
+                            Id = new Guid("003a4449-fc03-4c38-abf7-34c304a04fa2"),
                             Content = "Bussiness",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR",
                             RoleId = 1
                         },
                         new
                         {
-                            Id = new Guid("69fe8877-a63e-4f08-98b5-62c7e6acf4cb"),
+                            Id = new Guid("b8be5252-44da-4c7e-addc-e4334322574c"),
                             Content = "Poslovni",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US",
                             RoleId = 1
                         },
                         new
                         {
-                            Id = new Guid("3f3e0e4c-6fc4-4c4d-bb66-11f65207e58c"),
+                            Id = new Guid("b12d4617-04aa-46fb-be4c-40cf663c13b9"),
                             Content = "Klijent",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "hr-HR",
                             RoleId = 3
                         },
                         new
                         {
-                            Id = new Guid("09b1fcf0-5969-49f3-8aaf-dc6724f3c1e6"),
+                            Id = new Guid("27876906-c25c-4a41-a24c-2877c502a3b8"),
                             Content = "Client",
                             CreatedBy = "Migration",
-                            CreatedOn = new DateTime(2025, 6, 2, 17, 11, 21, 952, DateTimeKind.Utc).AddTicks(3822),
+                            CreatedOn = new DateTime(2025, 6, 2, 17, 18, 11, 274, DateTimeKind.Utc).AddTicks(9489),
                             CultureName = "en-US",
                             RoleId = 3
                         });
@@ -862,11 +866,29 @@ namespace Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Translation.ClaimTranslation", b =>
+                {
+                    b.HasOne("Domain.Entities.Security.Claim", null)
+                        .WithMany("Translations")
+                        .HasForeignKey("ClaimId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Domain.Entities.Translation.CultureTypeTranslation", b =>
                 {
                     b.HasOne("Domain.Entities.Core.CultureType", null)
                         .WithMany("Translations")
                         .HasForeignKey("CultureTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Entities.Translation.RoleTranslation", b =>
+                {
+                    b.HasOne("Domain.Entities.Security.Role", null)
+                        .WithMany("Translations")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -879,6 +901,16 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.Core.User", b =>
                 {
                     b.Navigation("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Security.Claim", b =>
+                {
+                    b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Security.Role", b =>
+                {
+                    b.Navigation("Translations");
                 });
 #pragma warning restore 612, 618
         }

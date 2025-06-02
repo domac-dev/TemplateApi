@@ -21,5 +21,7 @@
   "FORMAT_ERROR": "Neispravan format.",
   "USER_CREATED_SUCCESS": "Uspješno ste kreirali korisnički račun.",
   "ERROR_EMAIL_NOT_CONFIRMED": "Elektronska pošta nije potvrđena.",
-  "ERROR_CONFIRMATION_TOKEN": "Ključ za potvrdu elektronske pošte je neispravan."
+  "ERROR_CONFIRMATION_TOKEN": "Ključ za potvrdu elektronske pošte je neispravan.",
+  "CULTURE_DOES_NOT_EXIST": "Kultura ne postoji.",
+  "ROLE_DOES_NOT_EXIST": "Uloga ne postoji."
 }

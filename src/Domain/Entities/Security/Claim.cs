@@ -1,7 +1,9 @@
 ﻿using Ardalis.GuardClauses;
 using Domain.Abstraction;
 using Domain.Entities.Core;
+using Domain.Entities.Translation;
 using Domain.Enumerations;
+using System.Globalization;
 
 namespace Domain.Entities.Security
 {
@@ -15,6 +17,13 @@ namespace Domain.Entities.Security
         {
             Type = Guard.Against.EnumOutOfRange(claimType);
             Name = Enum.GetName(claimType)!;
+        }
+
+        public TranslationCollection<ClaimTranslation> Translations { get; set; } = [];
+        public string Content
+        {
+            get { return Translations[CultureInfo.CurrentCulture].Content; }
+            set { Translations[CultureInfo.CurrentCulture].Content = value; }
         }
 
         private readonly List<User> _users = [];

@@ -3,8 +3,6 @@
 //using Domain.Abstraction;
 //using Domain.Abstraction.Security;
 //using Domain.Entities.Core;
-//using Domain.Entities.Core.Specifications;
-//using Domain.Enumerations;
 //using NSubstitute;
 
 //namespace UnitTests.Authentication
