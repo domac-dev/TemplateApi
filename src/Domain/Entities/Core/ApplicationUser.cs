@@ -1,6 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Domain.Abstraction;
 using Domain.Enumerations;
+using Domain.Extensions;
 using System.Data;
 
 namespace Domain.Entities.Core
@@ -40,10 +41,10 @@ namespace Domain.Entities.Core
         public string ClaimsAsString => string.Join(",", _claims.Select(x => x.Name));
 
         public void AddClaim(Claim claim) => _claims.Add(claim);
-        public void RemoveClaim(Claim claim) => _claims.Remove(claim);
+        public bool RemoveClaim(int claimId) => _claims.RemoveFirst(c=> c.Id == claimId);
 
         public void AddRole(Role role) => _roles.Add(role);
-        public void RemoveRole(Role role) => _roles.Remove(role);
+        public bool RemoveRole(int roleId) => _roles.RemoveFirst(c => c.Id == roleId);
 
         public void AddRefreshTokenAndRevokeLast(string token, DateTime d, string? createdByIp)
         {
