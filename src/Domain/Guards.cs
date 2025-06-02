@@ -1,10 +1,49 @@
 ﻿using Ardalis.GuardClauses;
+using System.Globalization;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace Domain
 {
+    public static class CultureGuard
+    {
+        public static string Culture(this IGuardClause guardClause, string input,
+            [CallerArgumentExpression(nameof(input))] string? parameterName = null)
+        {
+            Guard.Against.NullOrWhiteSpace(input, parameterName);
+
+            try
+            {
+                CultureInfo.GetCultureInfo(input);
+            }
+            catch (CultureNotFoundException)
+            {
+                throw new ArgumentException("Invalid culture format.", parameterName);
+            }
+
+            return input;
+        }
+
+        public static string? CultureNullable(this IGuardClause guardClause, string? input,
+            [CallerArgumentExpression(nameof(input))] string? parameterName = null)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return null;
+
+            try
+            {
+                CultureInfo.GetCultureInfo(input);
+            }
+            catch (CultureNotFoundException)
+            {
+                throw new ArgumentException("Invalid culture format.", parameterName);
+            }
+
+            return input;
+        }
+    }
+
     public static class TelephoneGuard
     {
         public static string Telephone(this IGuardClause guardClause, string input,
